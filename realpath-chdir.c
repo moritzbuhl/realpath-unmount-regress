@@ -17,8 +17,6 @@
  */
 
 #include <err.h>
-#include <errno.h>
-#include <fcntl.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,7 +28,7 @@ main(int argc, char *argv[])
 	char *cwd, *dir, *path = NULL;
 	char res[PATH_MAX];
 
-	if (argc != 3 && argc != 4)
+	if (argc != 3)
 		errx(2, "usage: realpath-chdir cwd dir");
 
 	cwd = argv[1];
