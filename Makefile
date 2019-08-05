@@ -1,4 +1,4 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.1.1.1 2019/08/05 15:16:39 bluhm Exp $
 
 # Call realpath(3) in combination with chroot(2), chdir(2).
 # Use umount(8) to check that the mountpoint leaks no vnode.
@@ -34,7 +34,6 @@ REGRESS_TARGETS =
 REGRESS_TARGETS +=	run-chroot
 run-chroot:
 	@echo '\n======== $@ ========'
-	# realpath in a chroot environment
 	${SUDO} mkdir -p /mnt/regress-realpath
 	${SUDO} ./realpath-chroot /mnt/regress-realpath /
 	${SUDO} umount /mnt/regress-realpath
@@ -42,7 +41,6 @@ run-chroot:
 REGRESS_TARGETS +=	run-chroot-dir
 run-chroot-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chroot environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo
 	${SUDO} ./realpath-chroot /mnt/regress-realpath/foo /
 	${SUDO} umount /mnt/regress-realpath
@@ -50,7 +48,6 @@ run-chroot-dir:
 REGRESS_TARGETS +=	run-chroot-dir
 run-chroot-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chroot environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo
 	${SUDO} ./realpath-chroot /mnt/regress-realpath /foo
 	${SUDO} umount /mnt/regress-realpath
@@ -58,7 +55,6 @@ run-chroot-dir:
 REGRESS_TARGETS +=	run-chroot-dir-dir
 run-chroot-dir-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chroot environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo/bar
 	${SUDO} ./realpath-chroot /mnt/regress-realpath/foo /bar
 	${SUDO} umount /mnt/regress-realpath
@@ -66,7 +62,6 @@ run-chroot-dir-dir:
 REGRESS_TARGETS +=	run-chdir
 run-chdir:
 	@echo '\n======== $@ ========'
-	# realpath in a chdir environment
 	${SUDO} mkdir -p /mnt/regress-realpath
 	${SUDO} ./realpath-chdir /mnt/regress-realpath .
 	${SUDO} umount /mnt/regress-realpath
@@ -74,7 +69,6 @@ run-chdir:
 REGRESS_TARGETS +=	run-chdir-dir
 run-chdir-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chdir environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo
 	${SUDO} ./realpath-chdir /mnt/regress-realpath/foo .
 	${SUDO} umount /mnt/regress-realpath
@@ -82,7 +76,6 @@ run-chdir-dir:
 REGRESS_TARGETS +=	run-chdir-dir
 run-chdir-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chdir environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo
 	${SUDO} ./realpath-chdir /mnt/regress-realpath foo
 	${SUDO} umount /mnt/regress-realpath
@@ -90,7 +83,6 @@ run-chdir-dir:
 REGRESS_TARGETS +=	run-chdir-dir-dir
 run-chdir-dir-dir:
 	@echo '\n======== $@ ========'
-	# realpath in a chdir environment
 	${SUDO} mkdir -p /mnt/regress-realpath/foo/bar
 	${SUDO} ./realpath-chdir /mnt/regress-realpath/foo bar
 	${SUDO} umount /mnt/regress-realpath
